@@ -1,0 +1,6 @@
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) 
+vim.cmd('nnoremap <c-d> <c-d>zz')
+vim.cmd('nnoremap <c-u> <c-u>zz')
+vim.cmd('nnoremap [[ [[zz')
+vim.cmd('nnoremap ]] ]]zz')
+vim.cmd('nnoremap g gzz')

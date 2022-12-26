@@ -1,3 +1,3 @@
+require("pedro.remap")
 require("pedro.set")
-print("hello from init.lua")
-
+print("Hello from ./lua/pedro")
