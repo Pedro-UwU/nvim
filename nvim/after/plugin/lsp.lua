@@ -29,7 +29,8 @@ lsp.setup_nvim_cmp({
     },
     sources = {
         {name = 'copilot'},
-        {name = 'nvim_lsp'}
+        {name = 'nvim_lsp'},
+        {name = 'path'},
     }
 })
 
