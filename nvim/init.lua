@@ -1,3 +1,2 @@
-vim.g.mapleader = " "
-require("pedro")
-
+require("pedro.remap")
+print("Hello")

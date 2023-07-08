@@ -1,1 +1,1 @@
-require("pedro.set")
+print("Hello from pedro")

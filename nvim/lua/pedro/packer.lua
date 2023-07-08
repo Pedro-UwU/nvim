@@ -1,25 +1,29 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
--- vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use 'BurntSushi/ripgrep'
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  requires = { {'nvim-lua/plenary.nvim'} }
+  	requires = { 
+		{'nvim-lua/plenary.nvim'}, 
+    		{ "nvim-telescope/telescope-live-grep-args.nvim" },
+  	},
+  	config = function()
+    	require("telescope").load_extension("live_grep_args")
+  	end
   }
 
   use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    config = function()
-        vim.cmd('colorscheme rose-pine')
-    end
+    	'rose-pine/neovim',
+    	as = 'rose-pine',
   })
- 
+
+  use ({ 
+	"catppuccin/nvim", 
+	as = "catppuccin",
+  })
+  
   use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('tpope/vim-fugitive')
 
@@ -44,8 +48,9 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-
-  use("folke/zen-mode.nvim")
-  use("github/copilot.vim")
+  use 'theprimeagen/harpoon'
+  use 'mbbill/undotree'
+  use 'zbirenbaum/copilot.lua'
+  use 'zbirenbaum/copilot-cmp'
 
 end)
