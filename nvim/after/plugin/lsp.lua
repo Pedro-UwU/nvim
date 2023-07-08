@@ -34,6 +34,7 @@ lsp.setup_nvim_cmp({
         {name = 'text'},
         {name = 'buffer'},
         {name = 'snippets_nvim'},
+        {name = 'luasnip'}
     }
 })
 
