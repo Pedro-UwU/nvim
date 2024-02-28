@@ -4,7 +4,7 @@ return require('packer').startup(function(use)
 
   use 'BurntSushi/ripgrep'
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  'nvim-telescope/telescope.nvim', tag = '0.1.5',
   	requires = { 
 		{'nvim-lua/plenary.nvim'}, 
     		{ "nvim-telescope/telescope-live-grep-args.nvim" },
@@ -52,5 +52,25 @@ return require('packer').startup(function(use)
   use 'mbbill/undotree'
   use 'zbirenbaum/copilot.lua'
   use 'zbirenbaum/copilot-cmp'
+  use {
+    'cameron-wags/rainbow_csv.nvim',
+    config = function()
+        require 'rainbow_csv'.setup()
+    end,
+    -- optional lazy-loading below
+    module = {
+        'rainbow_csv',
+        'rainbow_csv.fns'
+    },
+    ft = {
+        'csv',
+        'tsv',
+        'csv_semicolon',
+        'csv_whitespace',
+        'csv_pipe',
+        'rfc_csv',
+        'rfc_semicolon'
+    }
+}
 
 end)
