@@ -18,9 +18,19 @@ local cmp_window = {
       max_height = 15,
       max_width = 60,
     }
-  }
+}
 
-lsp.setup_nvim_cmp({
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {'pylsp', 'java-language-server', 'eslint', 'rust_analyzer' },
+    handlers = {
+        lsp.default_setup,
+    }
+})
+
+
+
+cmp.setup({
 	mapping = cmp_mappings,
     window = cmp_window,
     preselect = 'none',
@@ -28,8 +38,8 @@ lsp.setup_nvim_cmp({
         completeopt = 'menu,menuone,noinsert,noselect'
     },
     sources = {
-        {name = 'copilot'},
         {name = 'nvim_lsp'},
+        {name = 'copilot'},
         {name = 'path'},
         {name = 'text'},
         {name = 'buffer'},
