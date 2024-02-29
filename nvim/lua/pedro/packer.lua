@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
   use 'mbbill/undotree'
   use 'zbirenbaum/copilot.lua'
   use 'zbirenbaum/copilot-cmp'
+  use 'rmagatti/auto-session'
   use {
     'cameron-wags/rainbow_csv.nvim',
     config = function()
@@ -72,5 +73,4 @@ return require('packer').startup(function(use)
         'rfc_semicolon'
     }
 }
-
 end)

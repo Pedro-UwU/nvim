@@ -11,7 +11,7 @@ cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 cmp_mappings['<C-j>'] = cmp.mapping.select_next_item(cmp_select)
 cmp_mappings['<C-k>'] = cmp.mapping.select_prev_item(cmp_select)
-cmp_mappings['<C-l>'] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace})
+cmp_mappings['<CR>'] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace})
 
 local cmp_window = {
     documentation = {
@@ -22,7 +22,7 @@ local cmp_window = {
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'pylsp', 'java-language-server', 'eslint', 'rust_analyzer' },
+    ensure_installed = {'pylsp', 'eslint', 'rust_analyzer' },
     handlers = {
         lsp.default_setup,
     }
