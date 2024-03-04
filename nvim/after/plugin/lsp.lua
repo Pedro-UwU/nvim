@@ -73,3 +73,14 @@ vim.diagnostic.config({
   severity_sort = false,
   float = true,
 })
+
+local nvim_lsp = require('lspconfig')
+nvim_lsp.eslint.setup({
+  filetypes = {
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+  },
+})
+
